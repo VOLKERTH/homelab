@@ -1,0 +1,36 @@
+---
+  - name: "My test playbook"
+    hosts: nodes 
+
+    tasks: 
+    - name: "Test file permissions and show folder content"
+      become: true
+      copy:
+        src: /home/smunoz/file.txt
+        dest: /tmp
+        owner: user
+        group: user
+        mode: 0644
+
+    - name: "Finding files in /tmp"
+      find:
+        paths: /tmp
+      register: out
+
+    - name: "Show info"
+      debug:
+        var: out
+  
+    - name: "File permissions"
+      file:
+        path: /tmp/file.txt
+        mode: a+w
+
+    - name: "Finding files in /tmp"
+      find:
+        paths: /tmp
+      register: out
+
+    - name: "Show info"
+      debug:
+        var: out

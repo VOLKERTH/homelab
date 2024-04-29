@@ -1,0 +1,9 @@
+---
+  - name: "Changing permissions"
+    hosts: nodes 
+
+    tasks: 
+    - name: "File permissions"
+      file:
+        path: /tmp/file.txt
+        mode: a+w

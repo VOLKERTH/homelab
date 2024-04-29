@@ -1,0 +1,7 @@
+---
+  - name: "Playbook to kill processes"
+    hosts: nodes
+
+    tasks:
+      - name: "Running top process"
+        shell: "top"

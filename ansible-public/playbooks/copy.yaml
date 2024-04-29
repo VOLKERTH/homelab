@@ -1,0 +1,14 @@
+---
+  - name: "Copy file from local to remote clients"
+    hosts: nodes
+
+
+    tasks:
+    - name: "Copying files"
+      become: true
+      copy:
+        src: /home/smunoz/file.txt
+        dest: /tmp
+        owner: user
+        group: user
+        mode: 0644

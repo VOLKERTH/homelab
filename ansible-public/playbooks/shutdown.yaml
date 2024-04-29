@@ -1,0 +1,11 @@
+---
+  - name: "Playbook to shutdown inmediately the nodes"
+    hosts: nodes localhost
+
+    tasks:
+     - name: "Turning off the nodes"
+       shell: "/sbin/shutdown now"
+       become: yes
+
+     - name: "Test connectivity"
+       ping:

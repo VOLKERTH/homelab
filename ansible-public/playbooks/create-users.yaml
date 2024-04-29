@@ -1,0 +1,10 @@
+---
+  - name: "Playbook to create users"
+    hosts: localhost 
+
+    tasks:
+      - name: "Creating users"
+        user:
+          name: "power"
+          home: "/home/power"
+          shell: "/bin/bash"

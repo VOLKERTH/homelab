@@ -1,0 +1,32 @@
+---
+  - name: "Installing Apache and opening the port playbook"
+    hosts: nodes
+    become: yes
+    
+    tasks:
+    - name: "Install Apache"
+      apt: name=apache2 update_cache=yes state=latest
+    
+    - name: "Install UFW"
+      apt: name=ufw state=latest
+
+    - name: "Allow rule in ufw"
+      ufw: 
+        rule: allow
+        port: '80'
+        proto: tcp
+
+    - name: "Restart ufw service to load firewall changes"
+      service:
+        name: ufw
+        state: restarted
+
+    - name: "Reload Apache"
+      service:
+        name: apache2
+        state: reloaded
+
+    - name: "Restart Apache"
+      service:
+        name: apache2
+        state: restarted

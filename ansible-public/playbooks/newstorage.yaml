@@ -1,0 +1,31 @@
+---
+  - name: "Attaching a new disk and mount it" 
+    hosts: nodes
+    become: yes
+
+    tasks:
+
+      - name: "Create new partition"
+        community.general.parted:
+          name: files
+          label: gpt
+          device: /dev/sdb
+          number: 1
+          state: present
+
+      - name: "Create XFS filesystem"
+        filesystem:
+          dev: /dev/sdb1
+          fstype: xfs
+
+      - name: "Create mount directory"
+        file:
+          path: /data
+          state: directory
+
+      - name: "Mount the filesystem"
+        ansible.posix.mount:
+          src: /dev/sdb1
+          fstype: xfs
+          state: mounted
+          path: /data
