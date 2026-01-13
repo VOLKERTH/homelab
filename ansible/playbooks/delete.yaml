@@ -1,0 +1,27 @@
+---
+  - name: "My first playbook"
+    hosts: nodes
+    
+    tasks:
+    - name: "Finding files in /tmp"
+      find:
+        paths: /tmp
+      register: out
+
+    - name: "Show info"
+      debug:
+        var: out
+
+    - name: "Remove /tmp/file.txt"
+      ansible.builtin.file:
+        path: /tmp/notes.txt
+        state: absent
+
+    - name: "Finding files in /tmp"
+      find:
+        paths: /tmp
+      register: out
+
+    - name: "Show info"
+      debug:
+        var: out

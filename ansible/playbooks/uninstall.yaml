@@ -1,0 +1,10 @@
+---
+  - name: "Installing and running Apache"
+    hosts: nodes
+    become: true
+
+    tasks: 
+    - name: "Install Apache"
+      ansible.builtin.apt: 
+        name: apache2
+        state: absent

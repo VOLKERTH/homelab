@@ -1,0 +1,15 @@
+---
+  - name: "Playbook for creating cron task"
+    hosts: localhost 
+
+    tasks:
+      - name: "Schedule cron:"
+        cron:
+          name: "This job is scheduled by Ansible"
+          minute: "10"
+          hour: "10"
+          day: "*"
+          month: "*"
+          weekday: "4"
+          user: smunoz
+          job: "/home/smunoz/cfile.sh"

@@ -1,0 +1,8 @@
+---
+  - name: "Installing Parted playbook"
+    hosts: nodes
+    become: yes
+    
+    tasks:
+    - name: "Install Parted"
+      apt: name=parted update_cache=yes state=latest

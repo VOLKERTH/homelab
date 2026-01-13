@@ -1,0 +1,25 @@
+---
+  - name: "Playbook for shell script"
+    hosts: nodes 
+
+    tasks:
+    - name: "Copying bash script"
+      become: true
+      copy:
+        src: /home/smunoz/cfile.sh
+        dest: /home/user
+        owner: user
+        group: user
+        mode: 0755
+
+    - name: "Run shellscript"
+      shell: "/home/user/cfile.sh"
+
+    - name: "Finding files in /tmp"
+      find:
+        paths: /tmp
+      register: out
+
+    - name: "Show info"
+      debug:
+        var: out
