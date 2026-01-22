@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Bottles
+Comment=
+Exec=/home/smunoz/scripts/bottles.sh
+Icon=com.usebottles.bottles
+Terminal=true
+Type=Application
