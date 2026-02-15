@@ -64,3 +64,4 @@ else
     exit 1
 fi
 
+/opt/Discord/Discord
