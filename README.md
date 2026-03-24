@@ -20,6 +20,9 @@ I have used other technologies like:
 - Containers
   - Docker (Create images, Docker Compose, Volumes, Networking)
   - Kubernetes (Deploy cluster, basic administration)
+  
+- CI/CD
+  - GitHub Actions
 
 - Monitoring
   - Prometheus/Grafana
