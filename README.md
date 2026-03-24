@@ -5,9 +5,58 @@ I use this repo to upload cheatsheets, notes, scripts and lab reports :notebook:
 
 ## Who am I? :construction_worker:
 
-My name is Sergio Muñoz. Actually I currently work as Site Reliability Engineer / Deployment Engineer. Always I have worked as System Administrator in on-premise environments as well as cloud (AWS, Azure and a little bit of GCP)
+My name is Sergio Muñoz. Actually I currently work as Site Reliability Engineer / Deployment Engineer. Previously I worked as a System Administrator in on-premise environments (vCenter, Proxmox and Hyper-V) and in the cloud (AWS, Azure and a little bit of GCP) I helped to resolve tickets of user issues and microinformatics. 
+I have used other technologies like:
 
-Some of the technologies I use in my daily life are:
+- Operating Systems
+  - Linux (RHEL, Ubuntu)
+  - Windows Server (GPOs, FSMO, AD, DNS, DHCP, RDP)
+
+- Containers
+  - Docker (Create images, Docker Compose, Volumes, Networking)
+  - Kubernetes (Deploy cluster, basic administration)
+
+- Monitoring
+  - Prometheus/Grafana
+  - CheckMK
+  - Nagios
+  - PRTG
+
+- Administration
+  - AWS IAM
+  - Azure / Office365
+  - Google Workspace
+  - JumpCloud (LDAP Cloud)
+  - GitHub
+
+- Networking
+  - Fortinet (Policies, rules, network segmentation, publish services, VPN)
+  - Sophos (Policies, rules, network segmentation, publish services, VPN)
+  - Sonicwall (Policies, rules, network segmentation, publish services, VPN)
+
+- Backup
+  - Veeam Backup (DR, backups and restore tasks)
+  - AWS Backup
+  - AWS S3
+  
+- Storage
+  - HPE Simplivity
+  - HPE StoreOnce
+  - HPE Nimble
+  - Synology
+
+- Security
+  - Sophos EDR (Automated deployment in Windows, MacOS and Linux)
+  - Kaspersky
+  - Azure Defender
+  - Intune
+  - Purview
+
+- Virtualization
+  - Horizon VDI
+  - Citrix
+
+Some of the technologies I use in my daily life in this position are:
 
 - Linux (RHEL)
 - Ansible and AWX
