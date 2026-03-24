@@ -16,9 +16,9 @@ Some of the technologies I use in my daily life are:
 - Git
 - vCenter/Proxmox
 
-LinkedIn: https://www.linkedin.com/in/sergio-mu%C3%B1oz-masero-931471165/
+Contact me: ![LinkedIn](https://www.linkedin.com/in/sergio-mu%C3%B1oz-masero-931471165/)
 
-## My Homelab :computer:
+## My Homelab :computer: as hobby
 
 ### Hardware
 
