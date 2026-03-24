@@ -5,7 +5,12 @@ I use this repo to upload cheatsheets, notes, scripts and lab reports :notebook:
 
 ## Who am I? :construction_worker:
 
-My name is Sergio Muñoz. Actually I currently work as Site Reliability Engineer / Deployment Engineer. Previously I worked as a System Administrator in on-premise environments (vCenter, Proxmox and Hyper-V) and in the cloud (AWS, Azure and a little bit of GCP) I helped to resolve tickets of user issues and microinformatics. 
+My name is Sergio Muñoz. I love learn about IT technology because you can learn new things everyday. Actually I'm learning DevOps methodology and good practices.
+
+I currently work as Site Reliability Engineer / Deployment Engineer. 
+Previously I worked as a System Administrator in on-premise environments (vCenter, Proxmox and Hyper-V) and in the cloud (AWS, Azure and a little bit of GCP) I helped to resolve tickets of user issues and microinformatics too.
+
+
 I have used other technologies like:
 
 - Operating Systems
