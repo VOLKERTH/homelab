@@ -55,9 +55,9 @@
 - **git checkout:** Sirve para cambiar de rama, e incluso para posicionarnos en un commit.
 - **git merge:** Fusiona una rama a la rama donde te encuentres ahora.
     - \--ff: FAST FORWARD o la opción por defecto si no se pone parámetros a git merge, añade los cambios al HEAD de manera directa, si ves un gráfico de commits, añade DIRECTAMENTE a lo más actual de la rama donde nos encontramos (sería la rama de color rosa DEVELOP que la integra desde ese commit a lo más actual en MAIN, la azul). git merge --ff develop  
-        ![26a9ea2a6f6e2a2ee0de0ab1840fc3c5.png](../../_resources/26a9ea2a6f6e2a2ee0de0ab1840fc3c5.png)
+        ![26a9ea2a6f6e2a2ee0de0ab1840fc3c5.png](../resources/26a9ea2a6f6e2a2ee0de0ab1840fc3c5.png)
     - \--no-ff: NO FAST FORWARD, el merge crea una rama (VERDE de la primera imagen) con este cambio a la rama que indiques. git merge --no-ff develop. Después, en la segunda imagen, fusiona la rama VERDEa la rama develop ROSA, y finalmente a la AZUL que es MAIN.  
-        ![b5b7535fccf0144352bb435466a70339.png](../../_resources/b5b7535fccf0144352bb435466a70339.png) ![d4115f3f34d6a594b097e12add4ee18f.png](../../_resources/d4115f3f34d6a594b097e12add4ee18f.png)
+        ![b5b7535fccf0144352bb435466a70339.png](../resources/b5b7535fccf0144352bb435466a70339.png) ![d4115f3f34d6a594b097e12add4ee18f.png](../resources/d4115f3f34d6a594b097e12add4ee18f.png)
 - **git log:** Para hacer seguimiento de los cambios.
 - **git diff:** Compara diferencias entre un commit y tu código.
 - **git status**: Podemos ver información de en qué commit nos encontramos y posición del HEAD
@@ -82,11 +82,11 @@
 - Antes de subir código, hacer pull con los cambios de los compañeros.
 - Habilitar si procede que se eliminen ramas que no son principales, como las features, marcar el check **Automatically delete head branches**
 
-<img src="../../_resources/e640596a6cf56089c32d4d1acabebed1.png" alt="e640596a6cf56089c32d4d1acabebed1.png" width="538" height="581" class="jop-noMdConv">
+<img src="../resources/e640596a6cf56089c32d4d1acabebed1.png" alt="e640596a6cf56089c32d4d1acabebed1.png" width="538" height="581" class="jop-noMdConv">
 
 - Impedir que se hagan commits a main directamente, o que se borren del main (Ruleset)
 
-<img src="../../_resources/b572c91e716452e5037bfb066b2057f1.png" alt="b572c91e716452e5037bfb066b2057f1.png" width="541" height="518" class="jop-noMdConv">
+<img src="../resources/b572c91e716452e5037bfb066b2057f1.png" alt="b572c91e716452e5037bfb066b2057f1.png" width="541" height="518" class="jop-noMdConv">
 
 &nbsp;
 
