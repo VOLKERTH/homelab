@@ -19,3 +19,7 @@ https://docs.github.com/es/actions
 
 ## GitHub Actions Marketplace
 https://github.com/marketplace?type=actions
+
+### Ejemplo de pipelines sencillos:
+REPO1
+REPO2
