@@ -92,6 +92,10 @@
     - Validity (validez): Es el campo que indica el período de tiempo durante el cual el certificado es válido.
 
 - **ACME (Automated Certificate Management)**
-  - Permite que un servidor web pueda comunicarse directamente con una CA para solicitar, validar y obtener un certificado, todo sin intervención humana.
+  - Permite que un servidor web pueda comunicarse directamente con una CA para solicitar, validar y obtener un certificado, todo sin intervención humana. La parte más crítica de ACME es la validación de dominio para evitar suplantaciones de identidad.
+    - Desafío HTTP-01: La CA te pide que sirvas un archivo específico con un nombre y contenido exactos en una URL determinada del dominio.
+    - Desafío DNS-01: La CA te pide crear un registro de tipo TXT con un nombre y valor específicos.
 - **SSL (Certificate Signing Request)**
+  - SSL 2.0 y 3.0: Problema de vulnerabilidad POODLE que se aprovecha de una debilidad en el manejo dee un tipo de relleno del cifrado.
 - **TLS (Certificate Signing Request)**
+  - TLS 1.2 y 1.3: Mucho más robusto, mayor velocidad y seguridad al simplificar la negociación de la conexión y eliminar todos los algoritmos y cifrados inseguros.
