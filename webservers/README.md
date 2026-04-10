@@ -1,4 +1,4 @@
-# Seguridad y cifrado, Apache, NGINX
+# Seguridad y cifrado
 
 - **Cifrado extremo a extremo** (Cifrar el canal)
 
@@ -99,3 +99,40 @@
   - SSL 2.0 y 3.0: Problema de vulnerabilidad POODLE que se aprovecha de una debilidad en el manejo dee un tipo de relleno del cifrado.
 - **TLS (Certificate Signing Request)**
   - TLS 1.2 y 1.3: Mucho más robusto, mayor velocidad y seguridad al simplificar la negociación de la conexión y eliminar todos los algoritmos y cifrados inseguros.
+
+
+# Apache
+
+- Servidor web de código abierto que actúa como intermediario entre el navegador y los archivos de un sitio web. Maneja peticiones HTTP y sirve el contenido solicitado. La arquitectura es basado en un modelo de procesos padre-hijo. Un proceso padre con privilegios root lanza procesos hijos con menos privilegios por seguridad y estabilidad.
+- **MPMs(Módulos de multiprocesamiento)**: Definen cómo Apache maneja las peticiones concurrentes. Solo uno puede estar activo a la vez.
+  - **Prefork**: Modelo antiguo.Un proceso padre lanza procesos hijos, y cada proceso hijo maneja una conexión a la vez. Muy robusto pero consume más memoria.
+  - **Worker**: Un proceso padre lanza varios procesos hijos y cada hijo gestiona múltiples hilos. Cada hilo maneja una conexión. COnsume menos memoria que Prefork.
+  - **Event**: Es el MPM por defecto en distribuciones modernas. Similar a Worker, pero optimizado para manejar conexiones persistentes. Un hilo dedicado gestiona las conexiones en espera, liberando los hilos de trabajo para nuevas peticiones. Es el más escalable.
+
+
+## Configuración de Apache
+
+- **Archivos clave**:
+  - **httpd.conf o apache2.conf**: Contiene la configuración global del servidor.
+  - **sites-available/ y sites-enables/**: Estructura para gestionar sitios web de forma modular, con enlaces simbólicos para habilitar/deshabilitar.
+  - **httpd.conf**: Permite configuraciones a nivel de directorio, pero puede afectar el rendimiento.
+
+
+- **Comandos de gestión**:
+  - **apache o apache2ctl**: Herramientas para controlar el demonio de Apache.
+  - **apache start | stop | restart | graceful**: Inicia, detiene, reinicia entero Apache o reinicia manteniendo las conexiones con graceful.
+  - **apachectl -t**: Prueba la sintaxis de la configuración antes de reiniciar, evitando fallos.
+  - **httpd.conf**: Muestra la configuración de los hosts virtuales, muy útil para depurar.
+
+
+- **¿Qué contienen los archivos de configuración**:
+  - **Directivas globales**: Parámetros que afectan a todo el servidor, como el puerto en el que escucha, el usuario y grupo con el que se ejecuta el proceso, y el nombre del servidor.
+  - **Directivas de módulos**: Define qué módulos de Apache se cargan al inicio. Los módulos son la clave de la modularidad de Pache, ya que añaden funcionalidades específicas.
+  - **Inclusiones**: Esta es la directiva más importante para entender la arquitectura. En lugar de ponerlo todo en un solo archivo, httpf.conf incluye otros archivos y directorios de configuración. Esto organiza el trabajo y permite a los administradores activar o desactivar configuraciones de forma sencilla.
+
+  - La organización modular. Los directorios más comunes:
+    - **conf-available y conf-enabled (Debian/Ubuntu), o conf.d(RHEL)**: Contienen archivos de configuración para funcionalidades específicas.
+    - **mods-available y mods-enabled (Debian/Ubuntu), o modules.d(RHEL)**: Aquí se define qué módulos están disponibles y cuáles están activos. Se cargan al inicio del servidor.
+
+
+# NGINX
