@@ -1,0 +1,27 @@
+Vagrant.configure("2") do |config|
+  # Box base ligera (Ubuntu)
+  config.vm.box = "ubuntu/jammy64"
+
+  # Red privada (acceso desde tu host)
+  config.vm.network "private_network", ip: "192.168.56.10"; 
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Provisionamiento: instalar Apache
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y apache2
+
+    # Iniciar y habilitar Apache
+    systemctl enable apache2
+    systemctl start apache2
+
+    # Permisos básicos
+    chown -R www-data:www-data /var/www/html
+  SHELL
+
+  # Recursos mínimos (ligero)
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "512"
+    vb.cpus = 1
+  end
+end
