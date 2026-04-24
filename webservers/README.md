@@ -514,3 +514,16 @@ location / {
 }
 ```
 
+## Configuraciones de límites de recursos
+
+  - **worker_processes**: define cuántos procesos lanza NGINX.
+  - **worker_connections**: indica cuántas conexiones simultáneas maneja cada worker (por defecto 1024).
+      El máximo total = worker_processes x worker_connections.
+  - **multi_accept_on**: permite que un worker acepte varias conexiones pendientes a la vez.
+  - **keepalive_requests**: define cuántas peticiones se permiten por conexión antes de cerrarla, por defecto 100.
+  - **keepalive_timeout**: indica cuánto tiempo se mantieen abierta una conexión inactiva.
+  - **limit_conn_zone y  limit_conn**: controlan cuántas conexiones simultáneas pueden abrir un cliente. Si se excede, devuelve error 503.
+  - **limit_req_zone y limit_req**: limitan la tasa de peticiones, si se supera, devuelve un 503.
+  - **ssl_session_cache_shared:SSL:10m**: guarda sesiones TLS y reduce handshakes.
+  - **Buffers**: (client_header_buffer_size, proxy_buffer_size, etc.) controlan lectura de datos: solo ajustar ante errores por tamaños grandes
+  - **client_max_body_size**: limita tamaño de subida (por defecto, 1MiB). Aumentar para uploads grandes o reducir para proteger el backend.
