@@ -163,8 +163,8 @@ Conceptos dentro de VirtualHost:
 
 ```
 <VirtualHost \*:80>
-        ServerName ejemplo1.com  
-        ServerAlias www.ejemplo1.com  
+        ServerName ejemplo1.com
+        ServerAlias www.ejemplo1.com
         DocumentRoot /var/www/ejemplo1/public.html  
         ErrorLog /var/www/ejemplo1/logs/error.log  
         CustomLog /var/www/ejemplo1/logs/access.log combined  
@@ -190,6 +190,33 @@ Conceptos dentro de VirtualHost:
         SSLCertificateKeyFile /etc/ssl/private/secure_ejemplo_com.key  
 </VirtualHost>
 ```
+
+```
+**Crear certificados autofirmados:**
+
+openssl genrsa -out localCA.key 4096
+
+openssl req -x509 -new -key localCA.key -sha256 -days 3650 -out localCA.crt -subj "/C=ES/O=Lab/CN=Laboratorio CA"
+
+openssl req -new -newkey rsa:2048 -nodes -keyout asc.es.key -out asc.es.csr -subj "/CN=asc.es"
+
+cat > datos.cnf <<'EOF'
+[v3_server]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = asc.es
+EOF
+
+openssl x509 -req -in asc.es.csr \
+  -CA localCA.crt -CAkey localCA.key -CAcreateserial \
+  -out asc.es.crt -days 365 -sha256 \
+  -extfile datos.cnf -extensions v3_server
+```
+
+
 
 ## Hardening TLS
   
