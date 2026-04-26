@@ -1,5 +1,5 @@
 # APACHE
-
+```
 <VirtualHost *:443>
 
         ServerName www.web1.com
@@ -24,7 +24,7 @@
         </Directory>
 
 </VirtualHost>
-
+```
 ## Este VirtualHost está configurado para que atienda por HTTPS y proteger el directorio admin con un rango en específico de IPs y autenticación básica (usuario/contraseña)i
 
 Si se quiere añadir Proxy Inverso, puedes añadir:
@@ -45,8 +45,9 @@ Si queremos permitir que se pueda cambiar configuración a través de .HTACCESS,
 (Cambiar la ruta a la que corresponda, y añadir el .htaccess a la misma ruta)
 
 ## Ejemplo de .htaccess para redirigir cuando apuntan a un directorio que ya no existe, se ha movido:
+```
 Redirect 301 "/blog/" "/articulos/"
-
+```
 ## Ejemplo de pedir una imagen https://web1.com/tux.jpg -> https://web1.com/img/tux.jpg
 Redirectmatch 301 ^/(?!img/)(.*)\.jpg$ /img/$1.jpg
 
