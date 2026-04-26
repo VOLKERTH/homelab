@@ -1,3 +1,5 @@
+# APACHE
+
 <VirtualHost *:443>
 
         ServerName www.web1.com
@@ -47,3 +49,9 @@ Redirect 301 "/blog/" "/articulos/"
 
 ## Ejemplo de pedir una imagen https://web1.com/tux.jpg -> https://web1.com/img/tux.jpg
 Redirectmatch 301 ^/(?!img/)(.*)\.jpg$ /img/$1.jpg
+
+
+
+# NGINX
+
+## 
